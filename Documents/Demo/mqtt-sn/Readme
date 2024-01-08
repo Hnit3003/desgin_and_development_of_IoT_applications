@@ -1,0 +1,30 @@
+Ref: https://github.com/aignacio/homestark_mqtt_6lowpan_port
+
+/* Download code and compile */
+cd your-contiki-directory/
+git clone https://github.com/aignacio/mqtt-sn-contiki_example mqtt-sn-contiki
+cd mqtt-sn-contiki
+make all
+cd ../tools/cooja
+sudo ant run
+
+/* Create Cooja sim*/
+1 Border Router
+2 MQTT-SN nodes (using publisher.c and subscriber.c code)
+OR just run Cooja with simulation_mqtt_sn_2_node.csc
+
+/* Stop MQTT service if neccessary */
+sudo service mosquitto stop
+sudo systemctl stop mosquitto.service
+
+/* Run broker */
+cd your-contiki-directory/mqtt-sn-contiki/tools/mosquitto.rsmb/rsmb/src
+sudo ./broker_mqtts config.mqtt #we must run as sudo because it uses linux sockets API =/
+
+/* subscribe topic */
+cd your-contiki-directory/mqtt-sn-contiki/tools/mosquitto.rsmb/rsmb/src
+mosquitto_sub -t '#' -v
+
+/*if can not start broker: list all network services and kill broker_mq service */
+sudo lsof -i -n -P | more
+sudo kill PID
