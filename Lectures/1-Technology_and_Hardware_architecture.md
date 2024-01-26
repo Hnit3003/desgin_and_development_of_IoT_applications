@@ -3,7 +3,7 @@
 
 # 1.Mô hình hệ thống
 
-![](RackMultipart20240121-1-qi4sw2_html_a783000f90540eaa.png)
+![Alt text](image.png)
 
 ## 1.1.Embedded Tire
 
@@ -41,7 +41,7 @@ Người dùng sẽ truy cập vào Server để xem thông tin, gửi lệnh đ
 
 # 2.Cấu tạo của Mote
 
-![](RackMultipart20240121-1-qi4sw2_html_829db10dc60dc793.png)
+![Alt text](image-1.png)
 
 ## 2.1.Sensor/actuators
 
@@ -57,7 +57,7 @@ Lớp vỏ bảo vệ bên ngoài cho toàn bộ hệ thống bên trong. Học 
 
 ## 2.3.Processing and Storage
 
-![](RackMultipart20240121-1-qi4sw2_html_b0a9f55c75cc9252.png)
+![Alt text](image-2.png)
 
 ### 2.3.1. Storage – Flash
 
@@ -83,7 +83,7 @@ Lớp vỏ bảo vệ bên ngoài cho toàn bộ hệ thống bên trong. Học 
 - Có chức năng low power mode, công suất tiêu thụ lúc hoạt động ở mW, công suất tiêu thụ trong low power mode ở uW.
 - Communication: đảm bảo tiêu tốn năng lượng thấp công suất truyền thấp (tối đa 7dBm, ~10mW) khoảng cách truyền ngắn, low bit rate.
 
-![](RackMultipart20240121-1-qi4sw2_html_27185a8a60f49b67.png)
+![Alt text](image-3.png)
 
 ## 2.4.Power
 
@@ -102,21 +102,21 @@ Mục tiêu đặt ra cho hệ thống WSN là hoạt động từ 6 tháng đ�
 
 WSNs: 50mW active, 20uW low-power mode.
 
-![](RackMultipart20240121-1-qi4sw2_html_9c032cc8ee9e139.png)
+![Alt text](image-4.png)
 
-Average power consumption:
+Average power consumption: $P_{ave} = (1 - f_{active}) \times P_{sleep} + f_{active} \times P_{active}$
 
-Lifetime:
+Lifetime: $EnergyStore/(P_{active} - P_{generate})$
 
 # 3.RF Technology
 
-![](RackMultipart20240121-1-qi4sw2_html_ce852d26e738c46d.png)
+![Alt text](image-5.png)
 
 Wireless Sensor Networking (WSN): khoảng cách vừa, tốc độ thấp.
 
 Công suất tiêu thụ thấp, tốc độ truyền dữ liệu thấp, tự khởi tạo hệ thống mạng.
 
-![](RackMultipart20240121-1-qi4sw2_html_1d6b342652114723.png)
+![Alt text](image-6.png)
 
 # 4.IEEE 802.15.4
 
@@ -128,7 +128,7 @@ Chia băng tần cho Physical Layer như sau:
 - 920MHz – 928MHz: Bắc Mỹ, 10 channels, up to 30 channels.
 - 2.4GHz – 2.4835GHz: toàn cầu, up to 26 channels.
 
-![](RackMultipart20240121-1-qi4sw2_html_57f5be227cf66f24.png)
+![Alt text](image-7.png)
 
 Sử dụng băng tần 2.4GHz – 2.4835GHz do áp dụng cho toàn cầu. Lưu ý chọn channel mà wifi và bluetooth sử dụng cùng băng tần ít ảnh hưởng tới.
 
@@ -146,366 +146,231 @@ Các loại thiết bị trong WSNs:
 
 | Coordinator | PAN Coordinator | Network Device |
 | --- | --- | --- |
-| Luôn là FFD. Nhận dữ liệu từ Network Device. Chuyển dữ liệu cho node tiếp theo hoặc PAN Coordinator.
- | Chỉ tồn tại duy nhất 1 PAN Coordinator trong WSN. Điều khiển toàn bộ PAN của WSNs. Thông thường gắn với máy tính, hoặc đưa dữ liệu ra ngoài. Đóng vai trò như Base station. | Có thể là FFD hoặ RFD. Được thiết lập theo chuẩn IEEE 802.15.4 MAC và Physical Layer. Đóng vai trò thu thập thông tin và chuyển dữ liệu cho Coordinator. |
+|Luôn là FFD. Nhận dữ liệu từ Network Device. Chuyển dữ liệu cho node tiếp theo hoặc PAN Coordinator.|Chỉ tồn tại duy nhất 1 PAN Coordinator trong WSN. Điều khiển toàn bộ PAN của WSNs. Thông thường gắn với máy tính, hoặc đưa dữ liệu ra ngoài. Đóng vai trò như Base station.| Có thể là FFD hoặc RFD. Được thiết lập theo chuẩn IEEE 802.15.4 MAC và Physical Layer. Đóng vai trò thu thập thông tin và chuyển dữ liệu cho Coordinator.|
 
 ## 4.2.Topologies
 
 ### 4.2.1. Start Topology
 
-![](RackMultipart20240121-1-qi4sw2_html_c614b6c50ccb3b4c.png)
+![Alt text](image-8.png)
 
 Có 1 FFD trung tâm, các FFD hoặc RFD sẽ kết nối tới FFD trung tâm này.
 
 ### 4.2.2. Peer-to-Peer Topology
 
-![](RackMultipart20240121-1-qi4sw2_html_5098f21324f7b75e.png)
+![Alt text](image-9.png)
 
 Một node có thể trao đổi dữ liệu với PAN coordinator trung tâm hoặc thông qua các node FFD khác thông qua kết nối Peer to Peer.
 
 ### 4.2.3. Cluster Tree Topology
 
-![Picture 1](RackMultipart20240121-1-qi4sw2_html_a79aa3be01164ba7.gif)
+![Alt text](image-10.png)
 
 Các node rìa giao tiếp với coordinators (FFDs). Có 1 PAN Coordinator duy nhất trong mạng.
 
 ## 4.3.Frame format
 
-![](RackMultipart20240121-1-qi4sw2_html_b64c0b362f08f3de.png)
+![Alt text](image-11.png)
 
 ### 4.3.1.MAC Layer Frame format:
 
 Được chia thành 4 loại MAC Frame chính:
 
-- Beacon Frames: frame do coordinate broadcast để thiết lập network.
+**- Beacon Frames:** frame do coordinate broadcast để thiết lập network.
 
-![](RackMultipart20240121-1-qi4sw2_html_601f40c04c32f7c3.png)
+![Alt text](image-12.png)
 
-- Command Frames: dùng để chỉ thị lệnh: kết hợp/phân tách mạng (association/disassociation network), data and beacon request, thông báo xung đột,…
+**- Command Frames:** dùng để chỉ thị lệnh: kết hợp/phân tách mạng (association/disassociation network), data and beacon request, thông báo xung đột,…
 
-![](RackMultipart20240121-1-qi4sw2_html_221a68962e3d5cc8.png)
+![Alt text](image-13.png)
 
-![](RackMultipart20240121-1-qi4sw2_html_1d0a809620513e16.png)
+![Alt text](image-14.png)
 
-- Data Frames: frame mang data là các Ipv6 packets đang được truyền/nhận.
+**- Data Frames:** frame mang data là các Ipv6 packets đang được truyền/nhận.
 
-![](RackMultipart20240121-1-qi4sw2_html_f52880a6e13d14d8.png)
+![Alt text](image-15.png)
 
-- Acknowledgements frames: dùng để xác nhận việc nhận frame có thành công hay không.
+**- Acknowledgements frames:** dùng để xác nhận việc nhận frame có thành công hay không.
 
-![](RackMultipart20240121-1-qi4sw2_html_3611221002eb0150.png)
+![Alt text](image-16.png)
 
-![](RackMultipart20240121-1-qi4sw2_html_701c589bab5a1059.png)
 
 Frame control (2 bytes): xác định các định dạng của frame, có cấu trúc như sau:
 
+![Alt text](image-17.png)
+
 - Frame type (0-2):
-
-Beacon 000
-
-Data 001
-
-Command 011
-
-Ack 010
+  - Beacon      000
+  - Data        001
+  - Command     011
+  - Ack         010
 
 - Security enable (3):
-
-False 0
-
-True 1
+    - False     0
+    - True      1
 
 - Frame pending (4):
-
-False 0
-
-True 1
+  - False       0
+  - True        1
 
 - Acknowledge request (5):
-
-False 0
-
-True 1
+  - False       0
+  - True        1
 
 - Intra-PAN (6):
-
-False 0
-
-True 1
+  - False       0
+  - True        1
 
 - Destination addressing mode (10-11):
-
-None 00
-
-Short/16-bit 10
+  - None            00
+  - Short/16-bit    10
 
 - Frame version (12-13):
-
-0 00
+  - 0          00
 
 - Source addressing mode (14-15):
-
-None 00
-
-Short/16-bit 10
-
-Ví dụ:
+  - None            00
+  - Short/16-bit    10
 
 **Beacon Frame:**
-
+```
 IEEE 802.15.4 Beacon, Src: 0x0000
-
     Frame Control Field: Beacon (0x8000)
-
         .... .... .... .000 = Frame Type: Beacon (0x0000)
-
         .... .... .... 0... = Security Enabled: False
-
         .... .... ...0 .... = Frame Pending: False
-
         .... .... ..0. .... = Acknowledge Request: False
-
         .... .... .0.. .... = Intra-PAN: False
-
         .... 00.. .... .... = Destination Addressing Mode: None (0x0000)
-
         ..00 .... .... .... = Frame Version: 0
-
         10.. .... .... .... = Source Addressing Mode: Short/16-bit (0x0002)
-
     Sequence Number: 99
-
     Source PAN: 0x01ff
-
     Source: 0x0000
-
     Superframe Specification
-
         .... .... .... 1111 = Beacon Interval: 15
-
         .... .... 1111 .... = Superframe Interval: 15
-
         .... 1111 .... .... = Final CAP Slot: 15
-
         ...0 .... .... .... = Battery Extension: False
-
         .1.. .... .... .... = PAN Coordinator: True
-
         1... .... .... .... = Association Permit: True
-
     GTS
-
         GTS Descriptor Count: 0
-
         GTS Permit: False
-
     Pending Addresses: 0 Short and 0 Long
-
 ZigBee Beacon
-
     Protocol ID: 0
-
     Stack Profile: Network Specific (0x00)
-
     Protocol Version: 2
-
     Router Capacity: True
-
     Device Depth: 0
-
     End Device Capacity: True
-
     Extended PAN ID: Miniware\_6f:73:6e:65:73 (00:00:72:6f:73:6e:65:73)
-
     Tx Offset: 16777215
-
     Update ID: 0
-
 0000  00 80 63 ff 01 00 00 ff cf 00 00 00 20 84 73 65   ..c......... .se
-
 0010  6e 73 6f 72 00 00 ff ff ff 00                     nsor......
+```
+
 
 **Data Frame:**
 
+```
 IEEE 802.15.4 Data, Dst: Broadcast, Src: 0x2c4d
-
     Frame Control Field: Data (0x8841)
-
         .... .... .... .001 = Frame Type: Data (0x0001)
-
         .... .... .... 0... = Security Enabled: False
-
         .... .... ...0 .... = Frame Pending: False
-
         .... .... ..0. .... = Acknowledge Request: False
-
         .... .... .1.. .... = Intra-PAN: True
-
         .... 10.. .... .... = Destination Addressing Mode: Short/16-bit (0x0002)
-
         ..00 .... .... .... = Frame Version: 0
-
         10.. .... .... .... = Source Addressing Mode: Short/16-bit (0x0002)
-
     Sequence Number: 14
-
     Destination PAN: 0x01ff
-
     Destination: 0xffff
-
     Source: 0x2c4d
-
     [Extended Source: ExeginTe\_ff:ff:00:20:07 (00:1c:da:ff:ff:00:20:07)]
-
     [Origin: 23]
-
 ZigBee Network Layer Data, Dst: Broadcast, Src: 0x2c4d
-
     Frame Control Field: Data (0x0248)
-
         .... .... .... ..00 = Frame Type: Data (0x0000)
-
         .... .... ..00 10.. = Protocol Version: 2
-
         .... .... 01.. .... = Discover Route: Enable (0x0001)
-
         .... ...0 .... .... = Multicast: False
-
         .... ..1. .... .... = Security: True
-
         .... .0.. .... .... = Source Route: False
-
         .... 0... .... .... = Destination: False
-
         ...0 .... .... .... = Extended Source: False
-
     Destination: 0xfffd
-
     Source: 0x2c4d
-
     Radius: 30
-
     Sequence Number: 123
-
     [Extended Source: ExeginTe\_ff:ff:00:20:07 (00:1c:da:ff:ff:00:20:07)]
-
     [Origin: 19]
-
     ZigBee Security Header
-
         Security Control Field
-
             ...0 1... = Key Id: Network Key (0x01)
-
             ..1. .... = Extended Nonce: True
-
         Frame Counter: 0
-
         Extended Source: ExeginTe\_ff:ff:00:20:07 (00:1c:da:ff:ff:00:20:07)
-
         Key Sequence Number: 0
-
         Message Integrity Code: 9376f9f8
-
         [Expert Info (Warn/Undecoded): Encrypted Payload]
-
             [Message: Encrypted Payload]
-
             [Severity level: Warn]
-
             [Group: Undecoded]
-
     Data (20 bytes)
-
         Data: 31316d646805adc32b8eafa8e32b726e3bb5a52e
-
         [Length: 20]
-
 0000  41 88 0e ff 01 ff ff 4d 2c 48 02 fd ff 4d 2c 1e   A......M,H...M,.
-
 0010  7b 28 00 00 00 00 07 20 00 ff ff da 1c 00 00 31   {(..... .......1
-
 0020  31 6d 64 68 05 ad c3 2b 8e af a8 e3 2b 72 6e 3b   1mdh...+....+rn;
-
 0030  b5 a5 2e 93 76 f9 f8                              ....v..
+```
 
 **Command Frame:**
-
+```
 IEEE 802.15.4 Command, Dst: 0x0000, Src: ExeginTe\_ff:ff:00:20:07
-
     Frame Control Field: Command (0xc823)
-
         .... .... .... .011 = Frame Type: Command (0x0003)
-
         .... .... .... 0... = Security Enabled: False
-
         .... .... ...0 .... = Frame Pending: False
-
         .... .... ..1. .... = Acknowledge Request: True
-
         .... .... .0.. .... = Intra-PAN: False
-
         .... 10.. .... .... = Destination Addressing Mode: Short/16-bit (0x0002)
-
         ..00 .... .... .... = Frame Version: 0
-
         11.. .... .... .... = Source Addressing Mode: Long/64-bit (0x0003)
-
     Sequence Number: 12
-
     Destination PAN: 0x01ff
-
     Destination: 0x0000
-
     Source PAN: 0xffff
-
     Extended Source: ExeginTe\_ff:ff:00:20:07 (00:1c:da:ff:ff:00:20:07)
-
     Command Identifier: Association Request (0x01)
-
     Association Request
-
         .... ...0 = Alternate PAN Coordinator: False
-
         .... ..1. = Device Type: True (FFD)
-
         .... .1.. = Power Source: True (AC/Mains Power)
-
         .... 1... = Receive On When Idle: True
-
         .1.. .... = Security Capability: True
-
         1... .... = Allocate Address: True
-
 0000  23 c8 0c ff 01 00 00 ff ff 07 20 00 ff ff da 1c   #......... .....
-
 0010  00 01 ce                                          ...
-
 Acknowledge Frame:
-
 IEEE 802.15.4 Ack, Sequence Number: 12
-
     Frame Control Field: Ack (0x0002)
-
         .... .... .... .010 = Frame Type: Ack (0x0002)
-
         .... .... .... 0... = Security Enabled: False
-
         .... .... ...0 .... = Frame Pending: False
-
         .... .... ..0. .... = Acknowledge Request: False
-
         .... .... .0.. .... = Intra-PAN: False
-
         .... 00.. .... .... = Destination Addressing Mode: None (0x0000)
-
         ..00 .... .... .... = Frame Version: 0
-
         00.. .... .... .... = Source Addressing Mode: None (0x0000)
-
     Sequence Number: 12
-
 0000  02 00 0c
+```
+
 
 ### 4.3.2. MAC Layer channel access
 
