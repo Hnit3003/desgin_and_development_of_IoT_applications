@@ -1,0 +1,15 @@
+\t (00:00:01) allegro 16.6 P004 (v16-6-112G) Windows 32
+\t (00:00:01)     Journal start - Mon Nov 28 12:16:06 2016
+\t (00:00:01)         Host=KAROLINE User=Vo Que Son Pid=5044 CPUs=4
+\t (00:00:01) 
+\t (00:00:02) Starting new design...
+\i (00:00:03) trapsize 2273
+\i (00:00:03) trapsize 2204
+\i (00:00:03) trapsize 2285
+\i (00:00:03) trapsize 1820
+\i (00:00:03) trapsize 3795
+\i (00:00:04) generaledit 
+\i (00:00:11) opencd 'D:/1. Que Son/1. BK/3. Bachelor Thesis/2016_Bui Van Son_Pham Van Quy_cc2538/Layout/allegro/OPENMOTE2.brd' 
+\t (00:00:11) Opening existing design...
+\i (00:00:11) trapsize 715
+\t (00:00:11)     Journal end - Mon Nov 28 12:16:16 2016
