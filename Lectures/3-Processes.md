@@ -178,6 +178,17 @@ Process Scheduler có công việc chính là gọi để khởi chạy process 
 
 Tất cả việc gọi process trong Contiki OS được thực hiện để phản hồi một sự kiện đã được post đến process đó, hoặc đáp ứng poll request đến process đó. Process Scheduler sẽ chuyển event identifer đến process được gọi. Một con trỏ mờ (opaque pointer) sẽ được truyền, con trỏ này được người gọi cung cấp và có thể là NULL cho biết không có dữ liệu nào được truyền bằng sự kiện. Một poll request không có dữ liệu nào được chuyển qua.
 
-##### Starting Process
+#### Starting Process
 
 Process được bắt đầu với việc gọi hàm `process_start()`, thực hiện setup process control structure, đặt process vào danh sách các process đang hoạt động trong kernel và gọi code khởi tạo process thread.
+
+#### Exiting and Killing Processes
+
+Process Exit ở một trong hai cách: process tự exit (process itself exit) và process được một process khác kết thúc (killed by another process).
+
+- Một process có thể tự exit bằng cách gọi hàm `PROCESS_EXIT()` hoặc khi chương trình chạy tới câu lệnh `PROCESS_END()`.
+- Một process có thể được kết thúc khi process khác gọi hàm `process_exit()`.
+
+Khi một process kết thúc, Contiki kernel sẽ gửi một event đến tất cả các process khác để thông báo process đã kết thúc. Các process nhận được event này có thể thực hiện giải phóng mọi phân bổ tài nguyên được thực hiện bởi process đã kết thúc. Sự kiện `PROCESS_EVENT_EXITED` sẽ được gửi dưới dạng asynchronous event đến tất cả các process đang hoạt động.
+
+

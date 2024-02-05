@@ -55,3 +55,14 @@ Giá trị của Event Identifiers dưới `127` có thể sử dụng trong cá
 - `PROCESS_EVENT_EXITED`: : This event is sent to all processes when another process is about to exit. A pointer to the process control block of the process that is existing is sent along the event. When receiving this event, the receiving processes may clean up state that was allocated by the process that is about to exit.
 - `PROCESS_EVENT_TIMER`: This event is sent to a process when an event timer (etimer) has expired.
 
+### Autostarting Processes
+
+Một process được tự động khởi chạy trong hai trường hợp: trong quá trình hệ thống boot-up hoặc khi module được load.
+
+- Tất cả process được tự động khởi chạy trong quá trình hệ thống boot-up phải nằm trong một đanh sách toàn hệ thống. Danh sách này được biên dịch với Contiki kernel, nhằm để biết process nào được tự động khởi chạy khi module được load.
+- Khi một module được load, module loader sẽ tìm danh sách các autostart processes và start các processes đó khi module được load vào executable memory. 
+
+```C
+PROCESS(example_process, "Example process");
+AUTOSTART_PROCESSES(&example_process);
+```
