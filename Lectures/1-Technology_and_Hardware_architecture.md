@@ -3,7 +3,7 @@
 
 # 1.Mô hình hệ thống
 
-![Alt text](image.png)
+<img src="./image/Technology-Perspective.png" align='left'>
 
 ## 1.1.Embedded Tire
 
@@ -41,7 +41,7 @@ Người dùng sẽ truy cập vào Server để xem thông tin, gửi lệnh đ
 
 # 2.Cấu tạo của Mote
 
-![Alt text](image-1.png)
+<img src="./image/mote_structure.png" align='left'>
 
 ## 2.1.Sensor/actuators
 
@@ -57,7 +57,7 @@ Lớp vỏ bảo vệ bên ngoài cho toàn bộ hệ thống bên trong. Học 
 
 ## 2.3.Processing and Storage
 
-![Alt text](image-2.png)
+<img src="./image/mote_system.png" align='left'>
 
 ### 2.3.1. Storage – Flash
 
@@ -83,7 +83,7 @@ Lớp vỏ bảo vệ bên ngoài cho toàn bộ hệ thống bên trong. Học 
 - Có chức năng low power mode, công suất tiêu thụ lúc hoạt động ở mW, công suất tiêu thụ trong low power mode ở uW.
 - Communication: đảm bảo tiêu tốn năng lượng thấp công suất truyền thấp (tối đa 7dBm, ~10mW) khoảng cách truyền ngắn, low bit rate.
 
-![Alt text](image-3.png)
+<img src="./image/specification_of_mote.png" align='left'>
 
 ## 2.4.Power
 
@@ -102,7 +102,7 @@ Mục tiêu đặt ra cho hệ thống WSN là hoạt động từ 6 tháng đ�
 
 WSNs: 50mW active, 20uW low-power mode.
 
-![Alt text](image-4.png)
+<img src="./image/timeline_active_sleep.png" align='left'>
 
 Average power consumption: $P_{ave} = (1 - f_{active}) \times P_{sleep} + f_{active} \times P_{active}$
 
@@ -110,13 +110,13 @@ Lifetime: $EnergyStore/(P_{active} - P_{generate})$
 
 # 3.RF Technology
 
-![Alt text](image-5.png)
+<img src="./image/rf_technology.png" align='left'>
 
 Wireless Sensor Networking (WSN): khoảng cách vừa, tốc độ thấp.
 
 Công suất tiêu thụ thấp, tốc độ truyền dữ liệu thấp, tự khởi tạo hệ thống mạng.
 
-![Alt text](image-6.png)
+<img src="./image/communication_technology.png" align='left'>
 
 # 4.IEEE 802.15.4
 
@@ -128,7 +128,7 @@ Chia băng tần cho Physical Layer như sau:
 - 920MHz – 928MHz: Bắc Mỹ, 10 channels, up to 30 channels.
 - 2.4GHz – 2.4835GHz: toàn cầu, up to 26 channels.
 
-![Alt text](image-7.png)
+<img src="./image/frequency_band_802.15.4.png" align='left'>
 
 Sử dụng băng tần 2.4GHz – 2.4835GHz do áp dụng cho toàn cầu. Lưu ý chọn channel mà wifi và bluetooth sử dụng cùng băng tần ít ảnh hưởng tới.
 
@@ -152,25 +152,27 @@ Các loại thiết bị trong WSNs:
 
 ### 4.2.1. Start Topology
 
-![Alt text](image-8.png)
-
+<img src="./image/star_topology.png" align='left' width=120 height=120>
 Có 1 FFD trung tâm, các FFD hoặc RFD sẽ kết nối tới FFD trung tâm này.
+<br><br><br><br>
 
-### 4.2.2. Peer-to-Peer Topology
+### 4.2.2. Peer-to-Peer Topology 
 
-![Alt text](image-9.png)
+<img src="./image/peer_to_peer_topology.png" align='left' width=120 height=120> 
 
 Một node có thể trao đổi dữ liệu với PAN coordinator trung tâm hoặc thông qua các node FFD khác thông qua kết nối Peer to Peer.
+<br><br><br><br>
 
 ### 4.2.3. Cluster Tree Topology
 
-![Alt text](image-10.png)
+<img src="./image/cluster_tree_topology.png" align='left' width=130 height=120> 
 
 Các node rìa giao tiếp với coordinators (FFDs). Có 1 PAN Coordinator duy nhất trong mạng.
+<br><br><br><br>
 
 ## 4.3.Frame format
 
-![Alt text](image-11.png)
+<img src="./image/802.15.4_MAC_PHY_Frameformat.png"> 
 
 ### 4.3.1.MAC Layer Frame format:
 
@@ -178,26 +180,25 @@ Các node rìa giao tiếp với coordinators (FFDs). Có 1 PAN Coordinator duy 
 
 **- Beacon Frames:** frame do coordinate broadcast để thiết lập network.
 
-![Alt text](image-12.png)
+<img src="./image/beacon_frame.png">
 
 **- Command Frames:** dùng để chỉ thị lệnh: kết hợp/phân tách mạng (association/disassociation network), data and beacon request, thông báo xung đột,…
 
-![Alt text](image-13.png)
+<img src="./image/command_frame_1.png"> 
 
-![Alt text](image-14.png)
+<img src="./image/command_frame_2.png"> 
 
 **- Data Frames:** frame mang data là các Ipv6 packets đang được truyền/nhận.
 
-![Alt text](image-15.png)
+<img src="./image/data_frame.png"> 
 
 **- Acknowledgements frames:** dùng để xác nhận việc nhận frame có thành công hay không.
 
-![Alt text](image-16.png)
+<img src="./image/acknowledgements_frames.png"> 
 
+**Frame control (2 bytes):** xác định các định dạng của frame, có cấu trúc như sau:
 
-Frame control (2 bytes): xác định các định dạng của frame, có cấu trúc như sau:
-
-![Alt text](image-17.png)
+<img src="./image/frame_control.png"> 
 
 - Frame type (0-2):
   - Beacon      000
